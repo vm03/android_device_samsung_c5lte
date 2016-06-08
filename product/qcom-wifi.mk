@@ -14,6 +14,7 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwifi-hal-qcom \
     libwcnss_qmi \
+    wificond \
     wcnss_service
 
 PRODUCT_PACKAGES += \
