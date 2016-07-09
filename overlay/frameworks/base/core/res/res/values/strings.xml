@@ -23,4 +23,7 @@
         <item>Vendor-specific error message 0</item>
         <item>Vendor-specific error message 1</item>
     </string-array>
+
+    <!-- Should we listen for fingerprints while the screen is off? -->
+    <bool name="config_fingerprintWakeAndUnlock">false</bool>
 </resources>
