@@ -1,0 +1,4 @@
+# Fingerprint
+/data/validity(/.*)?                                    u:object_r:vcs_data_file:s0
+/dev/validity(/.*)?                                     u:object_r:vcs_device:s0
+/dev/vfsspi                                             u:object_r:vcs_device:s0
