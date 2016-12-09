@@ -378,6 +378,9 @@ on boot
     chown system system /sys/class/sec/sec_touchkey/brightness
     chmod 0660 /sys/class/sec/sec_touchkey/brightness
 
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
 on property:bluetooth.isEnabled=true
     write /sys/class/bluetooth/hci0/idle_timeout 7000
 
