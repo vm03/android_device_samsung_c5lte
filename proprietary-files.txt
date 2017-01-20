@@ -586,6 +586,12 @@ etc/firmware/ois_VE_BU24219.bin
 vendor/firmware/libpn548ad_fw.so
 vendor/firmware/ram_patch.fw
 
+# FinegerPrint
+lib/libbauthserver.so
+lib/libbauthtzcommon.so
+lib/libegis_fp_normal_sensor_test.so
+lib/libsynaFpSensorTestNwd.so
+
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8952.so
 
