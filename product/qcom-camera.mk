@@ -1,4 +1,6 @@
 # Camera
+PRODUCT_PACKAGES += \
+    camera.msm8952
 
 # Permissions
 PRODUCT_COPY_FILES += \
