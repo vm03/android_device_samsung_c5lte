@@ -15,3 +15,5 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := c5lte_defconfig
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
 
+BOARD_CUSTOM_BOOTIMG := true
+BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
