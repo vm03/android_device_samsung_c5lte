@@ -7,7 +7,7 @@
 /persist      ext4   /dev/block/bootdevice/by-name/persist
 /data         ext4   /dev/block/bootdevice/by-name/userdata  length=-16384
 /recovery     emmc   /dev/block/bootdevice/by-name/recovery  flags=backup=1
-/misc         emmc   /dev/block/bootdevice/by-name/misc
+/misc         emmc   /dev/block/bootdevice/by-name/fota
 /firmware     vfat   /dev/block/bootdevice/by-name/modem
 /system       ext4   /dev/block/bootdevice/by-name/system
 /efs          emmc   /dev/block/bootdevice/by-name/efs  flags=backup=1;display=EFS
