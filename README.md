@@ -15,4 +15,4 @@ Dimensions | 145.9 x 72.0 x 6.7
 Display | 1080 x 1920 pixels, 5.2", Super AMOLED
 Rear Camera  | 16 MP, f/1.9, dual-LED flash
 Front Camera | 8 MP, f/1.9
-Release Date | February 2014
+Release Date | June 2016
