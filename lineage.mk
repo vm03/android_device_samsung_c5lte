@@ -6,7 +6,7 @@ $(call inherit-product, device/samsung/c5lte/c5lte.mk)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 
-PRODUCT_NAME := cm_c5lte
+PRODUCT_NAME := lineage_c5lte
 BOARD_VENDOR := samsung
 PRODUCT_DEVICE := c5lte
 
