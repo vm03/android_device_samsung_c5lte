@@ -1,5 +1,5 @@
 #RECOVERY_VARIANT := twrp
-TARGET_RECOVERY_FSTAB := device/samsung/c5lte/recovery/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/c5lte/rootdir/etc/fstab.qcom
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 #TW_TARGET_USES_QCOM_BSP := true

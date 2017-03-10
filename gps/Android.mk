@@ -1,12 +1,11 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +14,8 @@
 # limitations under the License.
 #
 
-# Include package config fragments
-include $(LOCAL_PATH)/product/*.mk
+LOCAL_PATH := $(call my-dir)
 
-$(call inherit-product-if-exists, vendor/samsung/c5lte/c5lte-vendor.mk)
+ifeq ($(TARGET_DEVICE),c5lte)
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
+endif
