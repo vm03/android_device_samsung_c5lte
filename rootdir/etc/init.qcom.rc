@@ -34,6 +34,8 @@ on early-init
     symlink /data/tombstones /tombstones
     mkdir /dsp 0771 media media
 
+    export LD_SHIM_LIBS /system/lib/hw/audio.primary.msm8952.so|lib_audio_shim.so
+
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
@@ -267,6 +269,13 @@ on boot
     chown system system /sys/class/sec/led/led_pattern
     chown system system /sys/class/sec/led/led_brightness
     chown system system /sys/class/sec/led/led_lowpower
+    chown system system /sys/devices/virtual/sec/sec_touchkey/brightness
+
+    # Audio NXP
+    chmod 0660 /dev/i2c-6
+    chown system audio /dev/i2c-6
+    chmod 0660 /dev/i2c-7
+    chown system audio /dev/i2c-7
 
     # Permissions for Camera
     chown system system /sys/class/camera/rear/isp_core
