@@ -44,14 +44,9 @@ static struct light_state_t g_attention;
 char const*const RED_LED_FILE
         = "/sys/devices/virtual/sec/led/led_r";
 
-char const*const RED_BLINK_FILE
-	= "/sys/devices/virtual/sec/led/led_blink";
-
-char const*const GREEN_BLINK_FILE
-	= "/sys/class/leds/green/blink";
-
-char const*const BLUE_BLINK_FILE
-	= "/sys/class/leds/blue/blink";
+//TODO drivers/leds/leds-sm5705-rgb.c:446
+//char const*const BLINK_FILE
+//	= "/sys/devices/virtual/sec/led/led_blink";
 
 char const*const GREEN_LED_FILE
         = "/sys/devices/virtual/sec/led/led_g";
@@ -62,14 +57,8 @@ char const*const BLUE_LED_FILE
 char const*const LCD_FILE
         = "/sys/class/leds/lcd-backlight/brightness";
 
-char const*const RED_BREATH_FILE
-        = "/sys/class/leds/red/led_time";
-
-char const*const GREEN_BREATH_FILE
-        = "/sys/class/leds/green/led_time";
-
-char const*const BLUE_BREATH_FILE
-        = "/sys/class/leds/blue/led_time";
+char const*const BUTTON_FILE
+        = "/sys/devices/virtual/sec/sec_touchkey/brightness";
 
 /**
  * device methods
@@ -196,51 +185,50 @@ set_speaker_light_locked(struct light_device_t* dev,
     green = (colorRGB >> 8) & 0xFF;
     blue = colorRGB & 0xFF;
 
-    if (onMS > 0 && offMS > 0 && !(
-          (red == green && green == blue) ||
-          (red == green && blue == 0) ||
-          (red == blue && green == 0) ||
-          (green == blue && red == 0) ||
-          (blue == 0 && red == 0) ||
-          (green == 0 && red == 0) ||
-          (green == 0 && blue == 0)
-       )) {
-       // Blinking only works if all active component colors have
-       // the same brightness value
-       offMS = 0;
+
+    if (red > 0 || green > 0 || blue > 0) {
+        if ( red == 0 ) red = 1;
+        if ( green == 0 ) green = 1;
+        if ( blue == 0 ) blue = 1;
     }
 
-    if (onMS > 0 && offMS > 0) {
-        blink = 1;
+//    if (onMS > 0 && offMS > 0 && !(
+//          (red == green && green == blue) ||
+//          (red == green && blue == 0) ||
+//          (red == blue && green == 0) ||
+//          (green == blue && red == 0) ||
+//          (blue == 0 && red == 0) ||
+//          (green == 0 && red == 0) ||
+//          (green == 0 && blue == 0)
+//       )) {
+       // Blinking only works if all active component colors have
+//       // the same brightness value
+//       offMS = 0;
+//    }
+
+//    if (onMS > 0 && offMS > 0) {
+//        blink = 1;
         // Make sure the values are at least 1 second. That's the smallest
         // we take
-        if (onMS && onMS < 1000) onMS = 1000;
-        if (offMS && offMS < 1000) offMS = 1000;
+//        if (onMS && onMS < 1000) onMS = 1000;
+//        if (offMS && offMS < 1000) offMS = 1000;
         // ramp up, lit, ramp down, unlit. in seconds.
-        sprintf(breath_pattern,"1 %d 1 %d",(int)(onMS/1000),(int)(offMS/1000));
-    } else {
-        blink = 0;
-        sprintf(breath_pattern,"1 2 1 2");
-    }
+//        sprintf(breath_pattern,"1 %d 1 %d",(int)(onMS/1000),(int)(offMS/1000));
+//    } else {
+//        blink = 0;
+//        sprintf(breath_pattern,"1 2 1 2");
+//    }
 
     // Order of operations matters.
     //
     // Setting a pattern jacks up brightness to max, and setting the level
     // resets blink state. So first set the pattern, then the level,
     // and then kick off blinkage
-    if (!write_str(RED_BREATH_FILE, breath_pattern)) {
-        write_int(RED_LED_FILE, red);
-    }
-    if (!write_str(GREEN_BREATH_FILE, breath_pattern)) {
-        write_int(GREEN_LED_FILE, green);
-    }
-    if (!write_str(BLUE_BREATH_FILE, breath_pattern)) {
-         write_int(BLUE_LED_FILE, blue);
-    }
+    write_int(RED_LED_FILE, red);
+    write_int(GREEN_LED_FILE, green);
+    write_int(BLUE_LED_FILE, blue);
 
-    if (red) write_int(RED_BLINK_FILE, blink);
-    if (green) write_int(GREEN_BLINK_FILE, blink);
-    if (blue) write_int(BLUE_BLINK_FILE, blink);
+//  TODO:  write_int(BLINK_FILE, blink);
 
     return 0;
 }
@@ -301,6 +289,22 @@ set_light_attention(struct light_device_t* dev,
     return 0;
 }
 
+
+static int
+set_light_buttons(struct light_device_t* dev,
+        struct light_state_t const* state)
+{
+    int err = 0;
+    int brightness = rgb_to_brightness(state);
+    if(!dev) {
+        return -1;
+    }
+    pthread_mutex_lock(&g_lock);
+    err = write_int(BUTTON_FILE, brightness > 0 ? 1 : 0);
+    pthread_mutex_unlock(&g_lock);
+    return err;
+}
+
 /** Close the lights device */
 static int
 close_lights(struct light_device_t *dev)
@@ -333,6 +337,8 @@ static int open_lights(const struct hw_module_t* module, char const* name,
         set_light = set_light_notifications;
     else if (0 == strcmp(LIGHT_ID_ATTENTION, name))
         set_light = set_light_attention;
+    else if (0 == strcmp(LIGHT_ID_BUTTONS, name))
+        set_light = set_light_buttons;
     else
         return -EINVAL;
 
