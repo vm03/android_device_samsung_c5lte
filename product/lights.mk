@@ -1,3 +1,3 @@
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8952
+    lights.MSM8952
