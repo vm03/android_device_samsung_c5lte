@@ -1,6 +1,7 @@
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8952
+    camera.msm8952 \
+    libcamera_parameters_shim
 
 # Permissions
 PRODUCT_COPY_FILES += \
