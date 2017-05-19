@@ -19,7 +19,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath2=/system/lib/libsec-ril-dsds.so \
     persist.radio.multisim.config=dsds \
     persist.cne.feature=0 \
-    ro.multisim.simslotcount=2
+    ro.multisim.simslotcount=2 \
+    ro.telephony.ril_class=C5RIL
 
 # RIL
 PRODUCT_PACKAGES += \
