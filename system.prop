@@ -2,10 +2,35 @@
 # system.prop for msm8952
 #
 
+
+media.msm8956.version=0
+
+#enable dsp gapless mode by default
+audio.offload.gapless.enabled=false
+
 #
 # Set network mode to (T/L/G/W/1X/EVDO, T/G/W/L) for 7+5 mode device on DSDS mode
 #
 ro.telephony.default_network=9,1
+
+# Qcom patch RTSP keep video damaged au
+rtsp.video.keep-damaged-au=video/3gp
+
+persist.radio.sib16_support=0
+persist.radio.snapshot_enabled=1
+persist.radio.snapshot_timer=22
+persist.radio.tdscdma_present=1
+
+persist.radio.custom_ecc=1
+af.fast_track_multiplier=1
+audio_hal.period_size=192
+
+ro.config.dha_cached_min=6
+ro.config.dha_cached_max=15
+ro.config.dha_empty_min=8
+ro.config.dha_empty_max=30
+ro.config.dha_lmk_scale=1.909
+
 
 debug.sf.hw=0
 debug.egl.hw=0
@@ -46,7 +71,7 @@ vidc.enc.dcvs.extra-buff-count=2
 #Audio voice concurrency related flags
 voice.playback.conc.disabled=true
 voice.record.conc.disabled=false
-voice.voip.conc.disabled=false
+voice.voip.conc.disabled=true
 #Decides the audio fallback path during voice call, deep-buffer and fast are the two allowed fallback paths now.
 voice.conc.fallbackpath=deep-buffer
 
@@ -98,19 +123,8 @@ persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 #Set for msm8952
 tunnel.audio.encode = false
-#Buffer size in kbytes for compress offload playback
-audio.offload.buffer.size.kb=64
-#Minimum duration for offload playback in secs
-audio.offload.min.duration.secs=30
 #Enable offload audio video playback by default
 audio.offload.video=true
-
-#Enable PCM offload by default
-audio.offload.pcm.16bit.enable=true
-audio.offload.pcm.24bit.enable=true
-
-#Enable audio track offload by default
-audio.offload.track.enable=true
 
 #Enable music through deep buffer
 audio.deep_buffer.media=true
@@ -123,8 +137,6 @@ use.voice.path.for.pcm.voip=true
 
 #System property for FM transmitter
 ro.fm.transmitter=false
-#enable dsp gapless mode by default
-audio.offload.gapless.enabled=true
 
 #multi offload
 audio.offload.multiple.enabled=false
@@ -143,7 +155,7 @@ persist.hwc.enable_vds=1
 persist.debug.coresight.config=stm-events
 
 #property for vendor specific library
-ro.vendor.at_library=libqti-at.so
+#ro.vendor.at_library=libqti-at.so
 ro.vendor.gt_library=libqti-gt.so
 
 #property to enable narrow search range for video encoding
