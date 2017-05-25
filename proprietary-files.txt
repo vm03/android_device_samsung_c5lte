@@ -590,8 +590,14 @@ vendor/firmware/ram_patch.fw
 vendor/lib/hw/gatekeeper.msm8952.so
 
 # GPS
+bin/garden_app
+bin/loc_launcher
+lib/hw/gps.default.so
+lib/libalawb_algo.so
+lib/libgps.utils.so
+lib/libloc_core.so
+lib/libloc_eng.so
 -lib/libloc_api_v02.so
--lib/libloc_ds_api.so
 vendor/lib/hw/flp.default.so
 vendor/lib/libflp.so
 vendor/lib/libgeofence.so
