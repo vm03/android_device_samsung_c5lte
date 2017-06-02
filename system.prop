@@ -126,6 +126,8 @@ tunnel.audio.encode = false
 #Enable offload audio video playback by default
 audio.offload.video=true
 
+rild.libargs=-d /dev/smd0
+
 #Enable music through deep buffer
 audio.deep_buffer.media=true
 

@@ -10,17 +10,20 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.qmi.adb_logmask=0 \
-    persist.radio.apm_sim_not_pwdn=1 \
-    ro.telephony.call_ring.multiple=false \
-    ro.use_data_netmgrd=true \
-    ro.ril.telephony.mqanelements=6 \
-    rild.libpath=/system/lib/libsec-ril.so \
-    rild.libpath2=/system/lib/libsec-ril-dsds.so \
     persist.radio.multisim.config=dsds \
     persist.cne.feature=0 \
-    ro.multisim.simslotcount=2 \
-    ro.telephony.ril_class=C5RIL
+    ro.use_data_netmgrd=true \
+    persist.data.netmgrd.qos.enable=true \
+    persist.data.mode=concurrent \
+    DEVICE_PROVISIONED=1 \
+    ril.subscription.types=NV,RUIM \
+    rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
+    ro.telephony.default_cdma_sub=0 \
+    ro.telephony.default_network=9 \
+    telephony.lteOnCdmaDevice=1 \
+    persist.radio.apm_sim_not_pwdn=1 \
+    persist.radio.custom_ecc=1 \
+    persist.radio.sib16_support=1
 
 # RIL
 PRODUCT_PACKAGES += \
