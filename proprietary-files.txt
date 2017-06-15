@@ -739,7 +739,7 @@ vendor/lib/libulp2.so
 vendor/lib/libxt_native.so
 vendor/lib/libxtadapter.so
 vendor/lib/libxtwifi_ulp_adaptor.so
-
+lib/libsecnativefeature.so
 
 
 # Sensors
