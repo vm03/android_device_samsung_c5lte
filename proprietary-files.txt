@@ -746,6 +746,7 @@ lib/libsecnativefeature.so
 lib/hw/sensors.msm8952.so
 vendor/lib/libsensor1.so
 vendor/lib/sensor_calibrate.so
+vendor/lib/libyasalgo.so
 
 # Sound trigger
 #vendor/lib/libsmwrapper.so
