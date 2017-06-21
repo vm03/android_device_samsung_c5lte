@@ -153,6 +153,14 @@ on post-fs-data
 
     mkdir /data/diag_logs 0777 system system
 
+    # Fingerprint
+    mkdir /dev/validity 0770 system system
+    mkdir /data/validity 0770 system system
+
+    chown system radio /sys/class/fingerprint/fingerprint/type_check
+    chown system radio /sys/class/fingerprint/fingerprint/name
+    chown system radio /sys/class/fingerprint/fingerprint/vendor
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -409,6 +417,11 @@ service cnd /vendor/bin/cnd
 service dpmd /system/bin/dpmd
     class main
     socket dpmd stream 660 root system
+
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
+    group input
 
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
