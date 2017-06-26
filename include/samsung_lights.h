@@ -35,9 +35,9 @@
  * If one of your device's LEDs is more powerful than the others, use these
  * values to equalise them. This value is in the range 0.0-1.0.
  */
-#define LED_ADJUSTMENT_R 1.0
+#define LED_ADJUSTMENT_R 0.6
 #define LED_ADJUSTMENT_G 1.0
-#define LED_ADJUSTMENT_B 0.8
+#define LED_ADJUSTMENT_B 0.2
 
 /*
  * Light brightness factors
