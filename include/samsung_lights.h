@@ -37,7 +37,7 @@
  */
 #define LED_ADJUSTMENT_R 1.0
 #define LED_ADJUSTMENT_G 1.0
-#define LED_ADJUSTMENT_B 1.0
+#define LED_ADJUSTMENT_B 0.8
 
 /*
  * Light brightness factors
