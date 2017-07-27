@@ -38,27 +38,8 @@ vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 
 #Audio HW
-#lib/hw/audio.primary.msm8952.so
-#lib/libtfa98xx.so
-#lib/libSamsungPreProcess.so
-#lib/libSamsungPostProcessConvertor.so
-#lib/libSamsungPostProcess.so
-#lib/libsamsungVoipResampler.so
-#lib/libsamsungRecord_ns.so
-#lib/libsamsungRecord.so
-#lib/libsamsungSoundbooster_plus.so
-#lib/lib_soundaliveresampler.so
-#lib/lib_SamsungRec_V05001.so
-#lib/lib_SamsungVAD_v01009.so
-#lib/lib_SoundBooster_ver700.so
-#lib/lib_SoundAlive_3DPosition_ver107.so
-#lib/lib_SoundAlive_play_plus_ver127a.so
-#lib/lib_SoundAlive_SRC192_ver205.so
-#lib/lib_SoundAlive_SRC20k_ver100.so
-#lib/libsecaudioinfo.so
-#lib/lib_DNSe_NRSS_ver226.so
-#lib/lib_DNSe_EP_ver216c.so
-#etc/Tfa9897.cnt
+-lib/libtfa98xx.so
+etc/Tfa9897.cnt
 etc/audio_platform_info_extcodec.xml
 
 
