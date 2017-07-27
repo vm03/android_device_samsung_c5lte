@@ -1101,16 +1101,11 @@
             <ctl name="DAC1 Playback Volume" value="160"/>
             <ctl name="Mono Playback Volume" value="31"/>
     </path>
-    <!-- Temp hack, route speaker to handset
+
     <path name="speaker">
         <path name="spk" />
             <ctl name="DAC1 Playback Volume" value="175"/>
             <ctl name="Speaker Playback Volume" value="31"/>
-    </path> -->
-    <path name="speaker">
-        <path name="rcv" />
-            <ctl name="DAC1 Playback Volume" value="175"/>
-            <ctl name="Mono Playback Volume" value="31"/>
     </path>
 
     <path name="headset">
