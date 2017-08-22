@@ -1,12 +1,10 @@
 # Audio
 PRODUCT_PACKAGES += \
-    audiod \
     audio.primary.msm8952 \
     libaudio-resampler \
     libmm-omxcore \
     libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing
+    libqcomvisualizer
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
