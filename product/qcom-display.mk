@@ -1,8 +1,14 @@
 # Display
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.memtrack@1.0-impl \
     copybit.msm8952 \
     gralloc.msm8952 \
     hwcomposer.msm8952 \
+    libgenlock \
     libtinyxml \
     memtrack.msm8952 \
     AdvancedDisplay
@@ -18,3 +24,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=c2d \
     debug.mdpcomp.idletime=600 \
     persist.hwc.ptor.enable=true
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
