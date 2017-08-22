@@ -14,11 +14,10 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
     libwifi-hal-qcom \
     libwcnss_qmi \
     wificond \
+    wifilogd \
     wcnss_service
 
 PRODUCT_PACKAGES += \
