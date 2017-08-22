@@ -1,6 +1,6 @@
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprintd \
+    android.hardware.biometrics.fingerprint@2.1-service \
     fingerprint.msm8952
 
 PRODUCT_COPY_FILES += \

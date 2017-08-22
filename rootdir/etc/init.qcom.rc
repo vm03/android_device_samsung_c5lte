@@ -420,11 +420,6 @@ service dpmd /system/bin/dpmd
     class main
     socket dpmd stream 660 root system
 
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
-    group input
-
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
