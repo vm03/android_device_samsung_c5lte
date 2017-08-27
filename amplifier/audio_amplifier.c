@@ -84,6 +84,7 @@ static int enable_mixers(bool enable)
         mixer_ctl_set_value(ctl, 0, enable);
     }
 
+    mixer_close(mixer);
     return 0;
 
 }
