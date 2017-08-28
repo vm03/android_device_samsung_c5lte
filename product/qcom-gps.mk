@@ -6,7 +6,8 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8952 \
-    libshims_get_process_name
+    libshims_get_process_name \
+    libshims_flp
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
