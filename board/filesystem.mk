@@ -12,3 +12,6 @@ TARGET_FS_CONFIG_GEN := device/samsung/c5lte/config.fs
 TARGET_USERIMAGES_USE_EXT4 := true
 
 BOARD_ROOT_EXTRA_FOLDERS := dsp efs firmware firmware-modem persist
+
+# Extended Filesystem Support
+TARGET_EXFAT_DRIVER := exfat
