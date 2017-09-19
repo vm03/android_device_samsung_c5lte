@@ -545,5 +545,5 @@ vendor/lib64/libTimeService.so
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
 
-# WideVine
-vendor/lib/mediadrm/libwvdrmengine.so
+# WideVine - from angler
+vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
