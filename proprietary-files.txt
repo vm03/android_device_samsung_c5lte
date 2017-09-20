@@ -8,7 +8,7 @@ etc/Headset_cal.acdb
 etc/Speaker_cal.acdb
 
 # ADSP
-bin/adsprpcd
+bin/adsprpcd:vendor/bin/adsprpcd
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
@@ -53,7 +53,7 @@ etc/Tfa9897.cnt
 etc/audio_platform_info_extcodec.xml
 
 # Camera
-bin/mm-qcamera-daemon
+bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
 etc/camera/msm8952_camera_c5.xml
 etc/camera/s5k3p3sx_i16ql_chromatix.xml
 etc/camera/s5k4h5yc_chromatix.xml
@@ -313,7 +313,7 @@ etc/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw
 
 # DRM
-bin/qseecomd
+bin/qseecomd:vendor/bin/qseecomd
 vendor/bin/qseeproxydaemon
 vendor/lib64/lib-sec-disp.so
 vendor/lib64/libdrmfs.so
@@ -449,14 +449,14 @@ etc/firmware/modem.b21
 etc/firmware/modem.mdt
 
 # Perf
-bin/msm_irqbalance
+bin/msm_irqbalance:vendor/bin/msm_irqbalance
 vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
 # Peripheral manager
-bin/pm-proxy
-bin/pm-service
+bin/pm-proxy:vendor/bin/pm-proxy
+bin/pm-service:vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
@@ -464,7 +464,7 @@ vendor/lib/libperipheral_client.so
 vendor/lib/libsensor1.so
 
 # Qualcomm framework
-bin/irsc_util
+bin/irsc_util:vendor/bin/irsc_util
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -503,7 +503,7 @@ vendor/lib/libsmemlog.so
 bin/netmgrd
 bin/qmuxd
 bin/radish
-bin/rmt_storage
+bin/rmt_storage:vendor/bin/rmt_storage
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 -framework/qcnvitems.jar
