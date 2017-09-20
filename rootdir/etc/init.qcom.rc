@@ -142,9 +142,9 @@ on post-fs-data
     mkdir /data/fota 0771
     chown system system /data/fota
 
-    # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
-    restorecon_recursive /data/time
+    # Create /data/vendor/time folder for time-services
+    mkdir /data/vendor/time/ 0700 system system
+    restorecon_recursive /data/vendor/time
 
     mkdir /data/audio/ 0770 media audio
 
