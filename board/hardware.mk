@@ -1,5 +1,5 @@
+# Lineage hardware
 BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw \
-    hardware/samsung/cmhw
+    hardware/samsung/lineagehw
 
 BOARD_USES_CYANOGEN_HARDWARE := true
