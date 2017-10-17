@@ -10,10 +10,6 @@ PRODUCT_PACKAGES += \
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     av.streaming.offload.enable=true \
-    audio.offload.buffer.size.kb=64 \
-    audio.offload.gapless.enabled=true \
-    audio.offload.pcm.16bit.enable=true \
-    audio.offload.pcm.24bit.enable=true \
     use.voice.path.for.pcm.voip=true
 
 PRODUCT_COPY_FILES += \

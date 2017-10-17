@@ -5,8 +5,32 @@
 
 media.msm8956.version=0
 
-#enable dsp gapless mode by default
-audio.offload.gapless.enabled=false
+# Audio
+af.fast_track_multiplier=1
+audio.deep_buffer.media=true
+audio.offload.min.duration.secs=30
+audio.offload.video=true
+audio_hal.period_size=192
+persist.vendor.audio.fluence.speaker=true
+persist.vendor.audio.fluence.voicecall=true
+persist.vendor.audio.fluence.voicerec=false
+ro.vendor.audio.sdk.fluencetype=none
+ro.vendor.audio.sdk.ssr=false
+vendor.audio.dolby.ds2.enabled=true
+vendor.audio.offload.buffer.size.kb=64
+vendor.audio.offload.gapless.enabled=true
+vendor.audio.offload.multiple.enabled=false
+vendor.audio.offload.track.enable=true
+vendor.audio.playback.mch.downsample=true
+vendor.audio.rec.playback.conc.disabled=true
+vendor.audio.safx.pbe.enabled=true
+vendor.audio.tunnel.encode=false
+vendor.audio.use.sw.alac.decoder=true
+vendor.audio.use.sw.ape.decoder=true
+vendor.voice.conc.fallbackpath=deep-buffer
+vendor.voice.path.for.pcm.voip=true
+vendor.voice.playback.conc.disabled=true
+vendor.voice.record.conc.disabled=false
 
 #
 # Set network mode to (T/L/G/W/1X/EVDO, T/G/W/L) for 7+5 mode device on DSDS mode
@@ -23,7 +47,6 @@ persist.radio.tdscdma_present=1
 
 persist.radio.custom_ecc=1
 af.fast_track_multiplier=1
-audio_hal.period_size=192
 
 ro.config.dha_cached_min=6
 ro.config.dha_cached_max=15
@@ -68,13 +91,6 @@ mm.enable.qcom_parser=1048575
 # Additional buffers shared between Camera and Video
 vidc.enc.dcvs.extra-buff-count=2
 
-#Audio voice concurrency related flags
-voice.playback.conc.disabled=true
-voice.record.conc.disabled=false
-voice.voip.conc.disabled=true
-#Decides the audio fallback path during voice call, deep-buffer and fast are the two allowed fallback paths now.
-voice.conc.fallbackpath=deep-buffer
-
 #parser input buffer size(256kb) in byte stream mode
 audio.parser.ip.buffer.size=262144
 #
@@ -115,14 +131,6 @@ persist.fuse_sdcard=true
 #
 #snapdragon value add features
 #
-ro.qc.sdk.audio.ssr=false
-##fluencetype can be "fluence" or "fluencepro" or "none"
-ro.qc.sdk.audio.fluencetype=none
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
-#Set for msm8952
-tunnel.audio.encode = false
 #Enable offload audio video playback by default
 audio.offload.video=true
 
@@ -131,20 +139,12 @@ rild.libargs=-d /dev/smd0
 #Enable music through deep buffer
 audio.deep_buffer.media=true
 
-#Enable downsampling for multi-channel content > 48Khz
-audio.playback.mch.downsample=true
-
-#enable voice path for PCM VoIP by default
-use.voice.path.for.pcm.voip=true
-
 #System property for FM transmitter
 ro.fm.transmitter=false
 
 #multi offload
 audio.offload.multiple.enabled=false
 
-#enable pbe effects
-audio.safx.pbe.enabled=true
 #property for AudioSphere Post processing
 audio.pp.asphere.enabled=false
 
@@ -169,9 +169,6 @@ persist.qfp=false
 #min/max cpu in core control
 ro.core_ctl_min_cpu=2
 ro.core_ctl_max_cpu=4
-
-#property to enable DS2 dap
-audio.dolby.ds2.enabled=true
 
 #HWUI properties
 ro.hwui.texture_cache_size=72
