@@ -4,6 +4,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libmm-omxcore \
     libqcompostprocbundle \
+    libqcomvoiceprocessing \
     libqcomvisualizer
 
 # Properties
