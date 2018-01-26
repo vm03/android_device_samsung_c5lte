@@ -1,6 +1,7 @@
 # Power HAL
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service \
     power.msm8952
 
 # IRQ balance
