@@ -11,7 +11,6 @@ TARGET_USES_UNCOMPRESSED_KERNEL := false
 ENABLE_CPUSETS := true
 
 TARGET_KERNEL_SOURCE := kernel/samsung/c5lte
-TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := c5lte_defconfig
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
 
