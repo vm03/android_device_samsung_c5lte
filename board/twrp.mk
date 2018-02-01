@@ -1,5 +1,6 @@
-#RECOVERY_VARIANT := twrp
 TARGET_RECOVERY_FSTAB := device/samsung/c5lte/rootdir/etc/fstab.qcom
+ifeq ($(WITH_TWRP),true)
+RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 #TW_TARGET_USES_QCOM_BSP := true
@@ -10,3 +11,4 @@ TWHAVE_SELINUX := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone4/temp
 TW_USE_TOOLBOX := true
+endif
