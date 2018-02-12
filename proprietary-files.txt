@@ -7,6 +7,46 @@ etc/Hdmi_cal.acdb
 etc/Headset_cal.acdb
 etc/Speaker_cal.acdb
 
+# ADSP
+bin/adsprpcd
+vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
+vendor/lib/libadsp_default_listener.so
+vendor/lib/libadsprpc.so
+vendor/lib/libfastcvadsp_stub.so
+vendor/lib/libfastcvopt.so
+
+# ADSP modules
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
+vendor/lib/rfsa/adsp/libscveTextReco_skel.so
+
+# Audio libraries
+vendor/lib64/libacdb-fts.so
+vendor/lib64/libacdbloader.so
+vendor/lib64/libacdbmapper.so
+vendor/lib64/libacdbrtac.so
+vendor/lib64/libadiertac.so
+vendor/lib64/libaudcal.so
+vendor/lib64/libaudioalsa.so
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbmapper.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libadm.so
+vendor/lib/libaudcal.so
+vendor/lib/libaudioalsa.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
+
 #Audio HW
 -lib/libtfa98xx.so
 etc/Tfa9897.cnt
@@ -22,6 +62,34 @@ etc/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw
 
+# DRM
+bin/qseecomd
+vendor/bin/qseeproxydaemon
+vendor/lib64/lib-sec-disp.so
+vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libqisl.so
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/librpmb.so
+vendor/lib64/libsecureui.so
+vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libSecureUILib.so
+vendor/lib64/libssd.so
+vendor/lib64/libStDrvInt.so
+vendor/lib/libQSEEComAPI.so
+
+# FingerPrint
+lib64/libbauthserver.so
+lib64/libbauthtzcommon.so
+lib64/libegis_fp_normal_sensor_test.so
+lib64/libsynaFpSensorTestNwd.so
+lib/libbauthserver.so
+lib/libbauthtzcommon.so
+lib/libegis_fp_normal_sensor_test.so
+lib/libsynaFpSensorTestNwd.so
+
 # Firmwares
 etc/firmware/ice40.bin
 etc/firmware/ois_SE_BU24219.bin
@@ -29,6 +97,9 @@ etc/firmware/ois_SP_BU24219.bin
 etc/firmware/ois_VE_BU24219.bin
 vendor/firmware/libpn548ad_fw.so
 vendor/firmware/ram_patch.fw
+
+# Gatekeeper
+vendor/lib64/hw/gatekeeper.msm8952.so
 
 # Graphics firmware
 vendor/firmware/a225_pfp.fw
@@ -44,3 +115,41 @@ vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
+
+# Media
+lib/libOmxVpp.so
+lib/libvpplibrary.so
+vendor/lib/libI420colorconvert.so
+vendor/lib/libmm-color-convertor.so
+vendor/lib/libmmsw_detail_enhancement.so
+vendor/lib/libmmsw_math.so
+vendor/lib/libmmsw_opencl.so
+vendor/lib/libmmsw_platform.so
+vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAlacDec.so
+vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxApeDec.so
+vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxWmaDec.so
+
+# Perf
+bin/msm_irqbalance
+vendor/bin/perfd
+vendor/lib64/libqti-perfd-client.so
+vendor/lib/libqti-perfd-client.so
+
+# Thermal
+vendor/bin/thermal-engine
+vendor/lib64/libsmemlog.so
+vendor/lib64/libthermalclient.so
+vendor/lib64/libthermalioctl.so
+vendor/lib/libsmemlog.so
+vendor/lib/libthermalclient.so
+
+# Time services
+-vendor/lib64/libtime_genoff.so
+-vendor/lib/libtime_genoff.so
+
+# WideVine
+vendor/lib/mediadrm/libwvdrmengine.so
