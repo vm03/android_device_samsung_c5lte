@@ -32,9 +32,9 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 include $(CLEAR_VARS)
 
 ADSP_IMAGES := \
-    adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 adsp.b06 \
+	adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 adsp.b06 \
 	adsp.b07 adsp.b08 adsp.b09 adsp.b10 adsp.b11 adsp.b12 adsp.b13 \
-	adsp.mbn adsp.mdt
+	adsp.b14 adsp.mbn adsp.mdt
     
 ADSP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(ADSP_IMAGES)))
 $(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
@@ -137,7 +137,7 @@ MODEM_IMAGES := \
     modem.b00 modem.b01 modem.b02 modem.b04 modem.b05 modem.b06 \
     modem.b07 modem.b08 modem.b09 modem.b10 modem.b11 modem.b12 \
     modem.b13 modem.b16 modem.b17 modem.b18 modem.b19 modem.b20 \
-    modem.mdt
+    modem.b21 modem.mdt
 
 MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MODEM_IMAGES)))
 $(MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
