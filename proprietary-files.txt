@@ -173,6 +173,12 @@ vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
+# Sensors
+lib/hw/sensors.msm8952.so
+vendor/lib/libsensor1.so
+vendor/lib/sensor_calibrate.so
+vendor/lib/libyasalgo.so
+
 # Qualcomm framework
 bin/irsc_util
 vendor/lib64/libdiag.so
