@@ -17,7 +17,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.mode=concurrent \
     DEVICE_PROVISIONED=1 \
     ril.subscription.types=NV,RUIM \
-    rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
+    rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so \
     ro.telephony.default_cdma_sub=0 \
     ro.telephony.default_network=9 \
     telephony.lteOnCdmaDevice=1 \
@@ -30,6 +30,10 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
+    $(LOCAL_PATH)/configs/data/qmi_config.xml:system/etc/data/qmi_config.xml \
+    $(LOCAL_PATH)/configs/data/dsi_config.xml:system/etc/data/dsi_config.xml
 
 PRODUCT_PACKAGES += \
     telephony-ext
