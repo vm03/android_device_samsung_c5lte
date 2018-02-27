@@ -1,4 +1,4 @@
-TARGET_RECOVERY_FSTAB := device/samsung/c5lte/rootdir/etc/fstab.full
+TARGET_RECOVERY_FSTAB := device/samsung/c5lte/rootdir/etc/fstab.qcom
 ifeq ($(WITH_TWRP),true)
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
