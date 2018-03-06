@@ -48,7 +48,7 @@ persist.hwc.downscale_threshold=1.15
 #lpa.decode=false
 #lpa.use-stagefright=true
 #persist.speaker.prot.enable=false
-qcom.hw.aac.encoder=true
+qcom.hw.aac.encoder=false
 
 #
 # system props for the cne module
