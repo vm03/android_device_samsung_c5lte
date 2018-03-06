@@ -133,21 +133,6 @@ $(MDTP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(MDTP_SYMLINKS)
 
-MODEM_IMAGES := \
-    modem.b00 modem.b01 modem.b02 modem.b04 modem.b05 modem.b06 \
-    modem.b07 modem.b08 modem.b09 modem.b10 modem.b11 modem.b12 \
-    modem.b13 modem.b16 modem.b17 modem.b18 modem.b19 modem.b20 \
-    modem.b21 modem.mdt
-
-MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MODEM_IMAGES)))
-$(MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Modem firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware-modem/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(MODEM_SYMLINKS)
-
 PLAYREADY_IMAGES := \
     playread.b00 playread.b01 playread.b02 playread.b03 playread.mdt
 

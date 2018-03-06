@@ -167,6 +167,28 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 
+#Modem firmware
+etc/firmware/modem.b00
+etc/firmware/modem.b01
+etc/firmware/modem.b02
+etc/firmware/modem.b04
+etc/firmware/modem.b05
+etc/firmware/modem.b06
+etc/firmware/modem.b07
+etc/firmware/modem.b08
+etc/firmware/modem.b09
+etc/firmware/modem.b10
+etc/firmware/modem.b11
+etc/firmware/modem.b12
+etc/firmware/modem.b13
+etc/firmware/modem.b16
+etc/firmware/modem.b17
+etc/firmware/modem.b18
+etc/firmware/modem.b19
+etc/firmware/modem.b20
+etc/firmware/modem.b21
+etc/firmware/modem.mdt
+
 # Perf
 bin/msm_irqbalance
 vendor/bin/perfd
