@@ -21,6 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_cdma_sub=0 \
     ro.telephony.default_network=9 \
     telephony.lteOnCdmaDevice=1 \
+    persist.radio.add_power_save=1 \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.custom_ecc=1 \
     persist.radio.sib16_support=1
