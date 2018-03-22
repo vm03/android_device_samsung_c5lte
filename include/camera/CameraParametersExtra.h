@@ -18,6 +18,7 @@
 const char CameraParameters::KEY_OIS[] = "ois"; \
 const char CameraParameters::PIXEL_FORMAT_YUV420SP_NV21[] = "nv21"; \
 const char CameraParameters::KEY_OIS_SUPPORTED[] = "ois-supported"; \
+const char CameraParameters::KEY_SUPPORTED_EFFECT_PREVIEW_FPS_RANGE[] = "effect-available-fps-values"; \
 const char CameraParameters::KEY_SUPPORTED_OIS_MODES[] = "ois-values"; \
 const char CameraParameters::OIS_ON_STILL[] = "ois-still"; \
 const char CameraParameters::OIS_OFF[] = "ois-ff"; \
@@ -32,6 +33,7 @@ int CameraParameters::getInt64(const char *key) const { return -1; };
     static const char KEY_OIS[]; \
     static const char PIXEL_FORMAT_YUV420SP_NV21[]; \
     static const char KEY_OIS_SUPPORTED[]; \
+    static const char KEY_SUPPORTED_EFFECT_PREVIEW_FPS_RANGE[]; \
     static const char KEY_SUPPORTED_OIS_MODES[]; \
     static const char OIS_ON_STILL[]; \
     static const char OIS_OFF[]; \
