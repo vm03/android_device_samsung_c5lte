@@ -518,6 +518,10 @@ vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libxml.so
 vendor/lib/libmdmdetect.so
 
+# SEC
+lib64/libsecnativefeature.so
+lib/libsecnativefeature.so
+
 # Thermal
 vendor/bin/thermal-engine
 vendor/lib64/libsmemlog.so
