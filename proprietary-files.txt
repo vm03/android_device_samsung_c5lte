@@ -452,10 +452,7 @@ vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
 # Sensors
-lib/hw/sensors.msm8952.so
 vendor/lib/libsensor1.so
-vendor/lib/sensor_calibrate.so
-vendor/lib/libyasalgo.so
 
 # Qualcomm framework
 bin/irsc_util
