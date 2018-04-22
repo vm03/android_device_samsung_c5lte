@@ -16,7 +16,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-TARGET_COPY_OUT_VENDOR := system
 TARGET_USES_OVERLAY := true
 
 # Qualcomm support
