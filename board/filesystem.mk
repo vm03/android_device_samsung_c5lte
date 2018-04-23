@@ -10,6 +10,7 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE :=  ext4
 
 TARGET_FS_CONFIG_GEN := device/samsung/c5lte/config.fs
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 
 BOARD_ROOT_EXTRA_FOLDERS := dsp efs firmware firmware-modem persist
 
