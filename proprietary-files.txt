@@ -374,6 +374,8 @@ vendor/lib64/hw/vulkan.msm8952.so|68d1968e57e98bf77ef2a5030d7880757514d358
 vendor/lib64/libadreno_utils.so|fc5fee6926b57a419e1198d1c73ab45c1d7dc2a5
 vendor/lib64/libbccQTI.so|073d468d5feedbd227652efe069a2bd32131db4f
 vendor/lib64/libC2D2.so|ca23d7c0d3ba87dca4b454275265686fa44a0010
+vendor/lib64/libc2d30-a3xx.so|d4fa84e6850120b461c924fcbe9e8b3a9f3d5595
+vendor/lib64/libc2d30-a4xx.so|d4fa84e6850120b461c924fcbe9e8b3a9f3d5595
 vendor/lib64/libc2d30-a5xx.so|d4fa84e6850120b461c924fcbe9e8b3a9f3d5595
 vendor/lib64/libc2d30_bltlib.so|c0c3c6f3130597b9250017df564e818327ef90be
 vendor/lib64/libCB.so|2cc8438beaebc100c3e427fb073ba37a81493d2a
@@ -400,6 +402,8 @@ vendor/lib/hw/vulkan.msm8952.so|e8af3bc7340e6eab2aaa9a21dd3a749ee8a452be
 vendor/lib/libadreno_utils.so|19facad321090aece17686a8bbf5a0d5275c98df
 vendor/lib/libbccQTI.so|868a41ddf8135c98426eee4cc6b79999903e1630
 vendor/lib/libC2D2.so|b09b390faf04418f3a2e67ddb445a570f0332dd3
+vendor/lib/libc2d30-a3xx.so|fc205f045d8d10351708cecc1e7f71810abe240b
+vendor/lib/libc2d30-a4xx.so|206a35fadf01d9bf89d3eed229a5d2f2ab59d581
 vendor/lib/libc2d30-a5xx.so|7a25604e4f5886a92c4c330d90d8bb41dca1fe7f
 vendor/lib/libc2d30_bltlib.so|bafb4a019731c2a5bd1db88395688bea689a7540
 vendor/lib/libCB.so|3b663f5c5436228213cb77a603f70156ac0fab1a
