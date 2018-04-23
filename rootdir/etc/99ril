@@ -1,0 +1,4 @@
+#!/system/bin/sh
+
+sleep 180
+restart ril-daemon
