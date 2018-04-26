@@ -20,13 +20,13 @@ extern int NXP_I2C_verbose;
 
 typedef struct tfa {
     char buf[127];
-    int (*tfa_enable) (struct tfa * a1, int a2);
-    int (*tfa_setvolumestep) (struct tfa * a1, int a2);
-    int (*tfa_setvolumeattenuation) (struct tfa * a1, int a2);
-    int (*tfa_getImpedance) (struct tfa * a1);
-    int (*tfa_calibrateImpedance) (struct tfa * a1);
+    int (*tfa_enable)(struct tfa* a1, int a2);
+    int (*tfa_setvolumestep)(struct tfa* a1, int a2);
+    int (*tfa_setvolumeattenuation)(struct tfa* a1, int a2);
+    int (*tfa_getImpedance)(struct tfa* a1);
+    int (*tfa_calibrateImpedance)(struct tfa* a1);
 } tfa_t;
 
-extern int tfa_device_open(tfa_t * a1);
+extern int tfa_device_open(tfa_t* a1);
 
-#endif //_TFA_H_
+#endif  //_TFA_H_
