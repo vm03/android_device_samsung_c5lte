@@ -41,9 +41,79 @@ typedef struct c5_device {
     audio_mode_t current_mode;
     tfa_t *tfa;
     bool enable;
+    bool initializing;
+    bool writing;
+    pthread_t write_thread;
+    pthread_mutex_t mutex;
+    pthread_cond_t cond;
 } c5_device_t;
 
 static c5_device_t *c5_dev = NULL;
+
+
+static void * write_dummy_data(void *param) {
+    c5_device_t *t = (c5_device_t *) param;
+    uint8_t *buffer;
+    int size;
+    struct pcm *pcm;
+    bool signaled = false;
+
+    struct pcm_config config = {
+        .channels = 2,
+        .rate = 48000,
+        .period_size = 256,
+        .period_count = 2,
+        .format = PCM_FORMAT_S16_LE,
+        .start_threshold = config.period_size * config.period_count - 1,
+        .stop_threshold = UINT_MAX,
+        .silence_threshold = 0,
+        .avail_min = 1,
+    };
+
+    pcm = pcm_open(0, 0, PCM_OUT | PCM_MONOTONIC, &config);
+    if (!pcm || !pcm_is_ready(pcm)) {
+        ALOGE("pcm_open failed: %s", pcm_get_error(pcm));
+        if (pcm) {
+            goto err_close_pcm;
+        }
+        goto exit;
+    }
+
+    size = 1024 * 8;
+    buffer = calloc(1, size);
+    if (!buffer) {
+        ALOGE("%s: failed to allocate buffer", __func__);
+        goto err_close_pcm;
+    }
+
+    do {
+        if (pcm_write(pcm, buffer, size)) {
+            ALOGE("%s: pcm_write failed", __func__);
+        }
+        if (!signaled) {
+            pthread_mutex_lock(&t->mutex);
+            t->writing = true;
+            pthread_cond_signal(&t->cond);
+            pthread_mutex_unlock(&t->mutex);
+            signaled = true;
+        }
+    } while (t->initializing);
+
+
+err_free:
+    free(buffer);
+err_close_pcm:
+    pcm_close(pcm);
+exit:
+    if (!signaled) {
+        pthread_mutex_lock(&t->mutex);
+        t->writing = true;
+        pthread_cond_signal(&t->cond);
+        pthread_mutex_unlock(&t->mutex);
+    }
+    return NULL;
+}
+
 
 static int amp_set_mode(amplifier_device_t *device, audio_mode_t mode)
 {
@@ -90,37 +160,6 @@ static int enable_mixers(bool enable)
 
 }
 
-static int amp_set_output_devices(amplifier_device_t *device, uint32_t devices)
-{
-    c5_device_t *dev = (c5_device_t *) device;
-
-    switch (devices) {
-        case SND_DEVICE_OUT_HEADPHONES:
-        case SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES:
-        case SND_DEVICE_OUT_VOICE_HEADPHONES:
-        case SND_DEVICE_OUT_VOIP_HEADPHONES:
-        default:
-            ALOGE("%s:%d: Device = %d\n",
-                __func__, __LINE__, devices);
-            break;
-    }
-
-    return 0;
-}
-
-static int amp_output_stream_start(struct amplifier_device *device,
-        UNUSED struct audio_stream_out *stream, UNUSED bool offload)
-{
-    c5_device_t *dev = (c5_device_t *) device;
-
-    dev->tfa->tfa_enable (dev->tfa,dev->enable);
-    ALOGE("%s:%d: Enable = %d\n",
-        __func__, __LINE__, dev->enable);
-
-    return 0;
-}
-
-
 static int amp_enable_output_devices(amplifier_device_t *device,
         uint32_t devices, bool enable)
 {
@@ -131,9 +170,24 @@ static int amp_enable_output_devices(amplifier_device_t *device,
         case SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES:
         case SND_DEVICE_OUT_VOICE_SPEAKER:
         case SND_DEVICE_OUT_VOIP_SPEAKER:
-              enable_mixers(enable);
-              dev->enable = enable;
-              if (!enable)   dev->tfa->tfa_enable (dev->tfa,enable);
+            if(dev->enable != enable)
+            {
+                enable_mixers(enable);
+                dev->enable = enable;
+                if (enable) {
+                    dev->initializing = true;
+                    pthread_create(&dev->write_thread, NULL, write_dummy_data, dev);
+                    dev->tfa->tfa_enable (dev->tfa,dev->enable);
+                    pthread_mutex_lock(&dev->mutex);
+                    dev->initializing = false;
+                    while (!dev->writing) pthread_cond_wait(&dev->cond, &dev->mutex);
+                    pthread_mutex_unlock(&dev->mutex);
+                }
+                else
+                {
+                    dev->tfa->tfa_enable (dev->tfa,dev->enable);
+                }
+            }
         default:
             ALOGE("%s:%d: Enable = %d Device = %d\n",
                 __func__, __LINE__, enable, devices);
@@ -184,11 +238,11 @@ static int amp_module_open(const hw_module_t *module, UNUSED const char *name,
     c5_dev->amp_dev.common.close = amp_dev_close;
 
     c5_dev->amp_dev.set_input_devices = NULL;
-    c5_dev->amp_dev.set_output_devices = amp_set_output_devices;
+    c5_dev->amp_dev.set_output_devices = NULL;
     c5_dev->amp_dev.enable_input_devices = NULL;
     c5_dev->amp_dev.enable_output_devices = amp_enable_output_devices;
     c5_dev->amp_dev.set_mode = amp_set_mode;
-    c5_dev->amp_dev.output_stream_start = amp_output_stream_start;
+    c5_dev->amp_dev.output_stream_start = NULL;
     c5_dev->amp_dev.input_stream_start = NULL;
     c5_dev->amp_dev.output_stream_standby = NULL;
     c5_dev->amp_dev.input_stream_standby = NULL;
