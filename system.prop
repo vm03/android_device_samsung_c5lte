@@ -219,3 +219,6 @@ camera.lowpower.record.enable=1
 sched.colocate.enable=1
 
 persist.radio.lw_enabled=true
+
+# Security patch level
+ro.lineage.build.vendor_security_patch=2017-08-01
