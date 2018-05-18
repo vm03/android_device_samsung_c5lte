@@ -153,8 +153,8 @@ on enable-low-power
     write /sys/module/process_reclaim/parameters/pressure_max 70
     write /sys/module/process_reclaim/parameters/swap_opt_eff 30
 
-    rm /data/system/perfd/default_values
-    start perfd
+    # Set perfd properties
+    setprop sys.post_boot.parsed 1
 
 on property:init.svc.recovery=running
     trigger enable-low-power
