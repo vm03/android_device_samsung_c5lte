@@ -23,6 +23,7 @@
 
 #include <cutils/log.h>
 
+#include <audio_hw.h>
 #include <hardware/audio_amplifier.h>
 #include <voice.h>
 #include <msm8916/platform.h>

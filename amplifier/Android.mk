@@ -12,8 +12,13 @@ LOCAL_CFLAGS += \
 
 LOCAL_C_INCLUDES := \
 	external/tinyalsa/include \
+	external/tinycompress/include \
 	hardware/libhardware/include \
 	$(call project-path-for,qcom-audio)/hal \
+	$(call project-path-for,qcom-audio)/hal/audio_extn \
+	$(call include-path-for, audio-utils) \
+	$(call include-path-for, audio-route) \
+	$(call include-path-for, audio-effects) \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 
 LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
