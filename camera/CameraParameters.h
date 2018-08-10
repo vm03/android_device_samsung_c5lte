@@ -19,9 +19,18 @@ namespace android {
 class CameraParameters
 {
 public:
+    static const char KEY_OIS[];
     static const char KEY_OIS_SUPPORTED[];
     static const char KEY_SUPPORTED_EFFECT_PREVIEW_FPS_RANGE[];
     static const char PIXEL_FORMAT_YUV420SP_NV21[];
+    static const char KEY_SUPPORTED_OIS_MODES[];
+    static const char OIS_ON_STILL[];
+    static const char OIS_OFF[];
+    static const char OIS_ON_VIDEO[];
+    static const char OIS_ON_ZOOM[];
+    static const char OIS_ON_SINE_X[];
+    static const char OIS_ON_SINE_Y[];
+    static const char OIS_CENTERING[];
     int getInt64(const char *key) const;
 };
 
