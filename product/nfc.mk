@@ -4,7 +4,7 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0-service \
     NfcNci \
     Tag \
-    nfc_nci.msm852 \
+    nfc_nci.msm8952 \
     com.android.nfc_extras
 
 PRODUCT_COPY_FILES += \
