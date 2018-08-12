@@ -546,12 +546,10 @@ service thermal-engine /vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
 
-service timekeep /system/bin/timekeep restore
-    class late_start
-    user root
-    group root
-    oneshot
-    writepid /dev/cpuset/system-background/tasks
+service time_daemon /vendor/bin/time_daemon
+   class late_start
+   user root
+   group root
 
 service ppd /vendor/bin/mm-pp-daemon
     class late_start

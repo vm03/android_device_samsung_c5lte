@@ -36,8 +36,5 @@
 /sys/devices/.*/i2c-[0-9]/[0-9]-[0-9a-f]+/iio:device[0-9](/.*)? u:object_r:sysfs_sensors:s0
 /sys/devices/iio:device[0-9](/.*)?                              u:object_r:sysfs_sensors:s0
 
-# TimeKeep
-/(vendor|system/vendor)/bin/timekeep                            u:object_r:timekeep_exec:s0
-
 # Uncrypt
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/fota          u:object_r:misc_block_device:s0
