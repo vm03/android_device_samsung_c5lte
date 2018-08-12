@@ -314,6 +314,10 @@ on boot
     chown system system /sys/class/camera/ois/load_fw
     chown system system /sys/class/camera/ois/ois_power
 
+    #Bluetooth MAC
+    setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
+    chown bluetooth bluetooth ro.bt.bdaddr_path
+
 # Permissions for LCD
     chown system system /sys/class/lcd/panel/adaptive_control
     chmod 0660 /sys/class/lcd/panel/adaptive_control
