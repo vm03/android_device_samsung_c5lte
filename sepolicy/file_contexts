@@ -34,10 +34,15 @@
 /sys/bus/iio/devices                                            u:object_r:sysfs_sensors:s0
 /sys/devices/.*/i2c-[0-9]/[0-9]-[0-9a-f]+/iio:device[0-9](/.*)? u:object_r:sysfs_sensors:s0
 /sys/devices/iio:device[0-9](/.*)?                              u:object_r:sysfs_sensors:s0
-/sys/class/input/input1(/.*)?                                   u:object_r:sysfs_sensors:s0
-/sys/class/input/input5(/.*)?                                   u:object_r:sysfs_sensors:s0
-/sys/class/input/input6(/.*)?                                   u:object_r:sysfs_sensors:s0
-/sys/class/input/input7(/.*)?                                   u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/input/input1(/.*)?                         u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/input/input5(/.*)?                         u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/input/input6(/.*)?                         u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/input/input7(/.*)?                         u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/sensors/accelerometer_sensor(/.*)?         u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/sensors/magnetic_sensor(/.*)?              u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/sensors/sensor_dev(/.*)?                   u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/sensors/light_sensor(/.*)?                 u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/sensors/proximity_sensor(/.*)?             u:object_r:sysfs_sensors:s0
 
 # Uncrypt
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/fota          u:object_r:misc_block_device:s0
