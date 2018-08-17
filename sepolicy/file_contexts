@@ -26,12 +26,18 @@
 /sys/devices/virtual/sec/sec_key(/.*)?                          u:object_r:sysfs_sec_key:s0
 
 # Sensors
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service-c5lte u:object_r:hal_sensors_default_exec:s0
 /data/iNemo_gbias.dat                                           u:object_r:sensors_data_file:s0
 /data/iNemoEngine_gbias.dat                                     u:object_r:sensors_data_file:s0
 /data/system/yas_lib.cfg                                        u:object_r:sensors_data_file:s0
+/data/misc/bhy/config.ini                                       u:object_r:sensors_data_file:s0
 /sys/bus/iio/devices                                            u:object_r:sysfs_sensors:s0
 /sys/devices/.*/i2c-[0-9]/[0-9]-[0-9a-f]+/iio:device[0-9](/.*)? u:object_r:sysfs_sensors:s0
 /sys/devices/iio:device[0-9](/.*)?                              u:object_r:sysfs_sensors:s0
+/sys/class/input/input1(/.*)?                                   u:object_r:sysfs_sensors:s0
+/sys/class/input/input5(/.*)?                                   u:object_r:sysfs_sensors:s0
+/sys/class/input/input6(/.*)?                                   u:object_r:sysfs_sensors:s0
+/sys/class/input/input7(/.*)?                                   u:object_r:sysfs_sensors:s0
 
 # Uncrypt
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/fota          u:object_r:misc_block_device:s0
