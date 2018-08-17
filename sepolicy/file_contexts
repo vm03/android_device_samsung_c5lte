@@ -13,7 +13,7 @@
 
 # Lights
 /sys/devices/virtual/sec/sec_touchkey/brightness                u:object_r:sysfs_leds:s0
-/sys/devices/virtual/sec/led/led_*                              u:object_r:sysfs_leds:s0
+/sys/devices/virtual/sec/led(/.*)?                              u:object_r:sysfs_leds:s0
 
 # mDNIe
 /sys/devices/virtual/mdnie/mdnie/mode                           u:object_r:sysfs_mdnie:s0
