@@ -1182,8 +1182,8 @@
 
     <path name="rec-stereo-mic">
         <path name="sub-main-mic" />
-            <ctl name="IN4 Boost Volume" value="37"/>
-            <ctl name="IN3 Boost Volume" value="37"/>
+            <ctl name="IN4 Boost Volume" value="64"/>
+            <ctl name="IN3 Boost Volume" value="64"/>
             <ctl name="STO1 ADC Capture Volume" value="47"/>
     </path>
 
