@@ -501,6 +501,11 @@ service qcom-sh /vendor/bin/init.qcom.sh
     user root
     oneshot
 
+service 99ril /vendor/bin/99ril
+    class late_start
+    user root
+    oneshot
+
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2

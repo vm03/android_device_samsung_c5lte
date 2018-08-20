@@ -34,7 +34,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
     $(LOCAL_PATH)/configs/data/qmi_config.xml:system/etc/data/qmi_config.xml \
     $(LOCAL_PATH)/configs/data/dsi_config.xml:system/etc/data/dsi_config.xml \
-    $(LOCAL_PATH)/rootdir/etc/99ril:system/etc/init.d/99ril
+    $(LOCAL_PATH)/rootdir/etc/99ril:$(TARGET_COPY_OUT_VENDOR)/bin/99ril
 
 PRODUCT_PACKAGES += \
     telephony-ext
