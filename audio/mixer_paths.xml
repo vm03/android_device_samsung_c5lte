@@ -540,6 +540,11 @@
         <ctl name="Voice_Tx Mixer QUIN_MI2S_TX_Voice" value="1" />
     </path>
 
+    <path name="voice-call speaker">
+        <ctl name="QUAT_MI2S_RX_Voice Mixer CSVoice" value="1" />
+        <ctl name="Voice_Tx Mixer QUIN_MI2S_TX_Voice" value="1" />
+    </path>
+
     <path name="voice-call bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer CSVoice" value="1" />
         <ctl name="Voice_Tx Mixer INTERNAL_BT_SCO_TX_Voice" value="1" />
@@ -635,7 +640,7 @@
         <ctl name="VoiceMMode1_Tx Mixer QUIN_MI2S_TX_MMode1" value="1" />
     </path>
 
-    <path name="voicemmode1-call speaker-amp">
+    <path name="voicemmode1-call speaker">
         <ctl name="QUAT_MI2S_RX_Voice Mixer VoiceMMode1" value="1" />
         <ctl name="VoiceMMode1_Tx Mixer QUIN_MI2S_TX_MMode1" value="1" />
     </path>
@@ -664,7 +669,7 @@
         <ctl name="VoiceMMode2_Tx Mixer QUIN_MI2S_TX_MMode2" value="1" />
     </path>
 
-    <path name="voicemmode2-call speaker-amp">
+    <path name="voicemmode2-call speaker">
         <ctl name="QUAT_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer QUIN_MI2S_TX_MMode2" value="1" />
     </path>
@@ -1159,6 +1164,12 @@
     <path name="rec-main-mic">
         <path name="main-mic" />
             <ctl name="IN4 Boost Volume" value="44"/>
+            <ctl name="STO1 ADC Capture Volume" value="47"/>
+    </path>
+
+    <path name="voice-call-speaker-mic">
+        <path name="main-mic" />
+            <ctl name="IN4 Boost Volume" value="54"/>
             <ctl name="STO1 ADC Capture Volume" value="47"/>
     </path>
 
