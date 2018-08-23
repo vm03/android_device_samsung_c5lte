@@ -1,3 +1,10 @@
+on init
+    wait /dev/ion
+    wait /dev/qseecom
+
+    chown system system /dev/ion
+    chown system drmrpc /dev/qseecom
+
 on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
