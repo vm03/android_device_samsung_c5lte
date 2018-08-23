@@ -8,7 +8,7 @@
 /data         ext4   /dev/block/bootdevice/by-name/userdata  length=-16384
 /recovery     emmc   /dev/block/bootdevice/by-name/recovery  flags=backup=1
 /misc         emmc   /dev/block/bootdevice/by-name/fota
-/firmware     vfat   /dev/block/bootdevice/by-name/modem
+/firmware     vfat   /dev/block/bootdevice/by-name/apnhlos flags=display="Firmware";mounttodecrypt
 /system       ext4   /dev/block/bootdevice/by-name/system
 /efs          emmc   /dev/block/bootdevice/by-name/efs  flags=backup=1;display=EFS
 /modemst1     emmc   /dev/block/bootdevice/by-name/modemst1  flags=backup=1;display=modemst
