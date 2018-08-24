@@ -101,6 +101,8 @@ on post-fs-data
 
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
+    mkdir /data/misc/audio/acdbdata 0770 media audio
+    mkdir /data/misc/audio/acdbdata/delta 0770 media audio
     restorecon_recursive /data/misc/audio
 
     # Create directory used by the DASH client
