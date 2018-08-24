@@ -608,5 +608,6 @@ service msm_irqbal_lb /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance_l
     writepid /dev/cpuset/system-background/tasks
 
 on property:vold.decrypt=trigger_restart_framework
+    restart audio-hal-2-0
     stop camera-provider-2-4
     start camera-provider-2-4
