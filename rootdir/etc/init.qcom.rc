@@ -51,6 +51,9 @@ on fs
     wait /dev/block/bootdevice/by-name/dsp
     restorecon_recursive   /dsp
 
+    # Bluetooth
+    mkdir /persist/wlan_bt 0700 system system
+
 # msm specific files that need to be created on /data
 on post-fs-data
 

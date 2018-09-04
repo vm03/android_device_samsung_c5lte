@@ -27,6 +27,14 @@ vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libscveTextReco_skel.so
 
+# ANT+ - from SRT Phone 8.0.0
+lib/com.qualcomm.qti.ant@1.0.so|e37c23158bf3af885cb3186ccae15ebc5fca0445
+-lib/libantradio.so|61bcacf93596ae2b68ce180fbf55edc105326cd1
+lib64/com.qualcomm.qti.ant@1.0.so|728b0bfb87f57329d94a81db8b9fba02d00e3194
+-lib64/libantradio.so|f250d5fc7f9701a6533cdc7cc0b60f18bdcc7cfc
+vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so|08defae3495369e2c044adb8e8dba7b5beb303cf
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so|e20beccba9ba1a5b3ca7389b1b573b18743588a7
+
 # aptX - from marlin - OPM1.171019.011
 lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
 lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
@@ -57,6 +65,15 @@ vendor/lib/soundfx/libqcvirt.so
 -lib/libtfa98xx.so
 etc/Tfa9897.cnt
 etc/audio_platform_info_extcodec.xml
+
+# Bluetooth - from SRT Phone 8.0.0
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|587ddf45b4d56bf9d0b02c351722336db73ff01f
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|1a2dc1c2d217f47b9c99a0afa9e4912abd32e381
+vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so|65741ce5d42b118146362929864fae6ff46d3531
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|7b0558d59626a90e2d48b2626334dc39238c6505
+vendor/lib64/libbt-hidlclient.so|15ccf847e926ec790e1f9bde3b211bc6c3e81b59
+vendor/lib64/libbtnv.so|89c9392ae151148d7a88c4de6962c0628af2af45
+vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so|882d31cf970777d98706a25f2eb729a9c9c10457
 
 # Camera
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
