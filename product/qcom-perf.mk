@@ -1,6 +1,6 @@
 # Power HAL
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service-qti
+    android.hardware.power@1.1-service-qti
 
 # IRQ balance
 PRODUCT_COPY_FILES += \
