@@ -47,6 +47,9 @@
 /sys/devices/virtual/sensors/light_sensor(/.*)?                 u:object_r:sysfs_sensors:s0
 /sys/devices/virtual/sensors/proximity_sensor(/.*)?             u:object_r:sysfs_sensors:s0
 
+# TouchKey
+/sys/class/sec/sec_touchkey/input/enabled u:object_r:sysfs_keypad:s0
+
 # Uncrypt
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/fota          u:object_r:misc_block_device:s0
 

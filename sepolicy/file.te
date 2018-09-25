@@ -3,3 +3,4 @@ type biometrics_data_file, file_type, data_file_type;
 type wifi_efs_file, file_type;
 type sysfs_mdnie, fs_type, sysfs_type;
 type sysfs_sec_key, fs_type, sysfs_type;
+type sysfs_keypad, fs_type, sysfs_type;
