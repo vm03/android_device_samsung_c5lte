@@ -10,3 +10,5 @@ r_dir_file(system_server, app_efs_file)
 # run on big cores for app launch (sched_boost) - instead of just
 # boosting them to make it "more likely" to run on big cores.
 allow system_server domain:process setsched;
+
+allow system_server sysfs_keypad:file rw_file_perms;
