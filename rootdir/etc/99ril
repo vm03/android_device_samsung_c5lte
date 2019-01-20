@@ -1,4 +1,4 @@
-#!/vendor/bin/sh
+#!/system/bin/sh
 
 sleep 120
 stop ril-daemon

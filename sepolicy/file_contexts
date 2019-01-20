@@ -52,5 +52,3 @@
 
 # Uncrypt
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/fota          u:object_r:misc_block_device:s0
-
-/(vendor|system/vendor)/bin/99ril                               u:object_r:qti_init_shell_exec:s0
