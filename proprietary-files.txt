@@ -457,28 +457,6 @@ vendor/lib/libOmxWmaDec.so
 # Keystore - from gts210vewifi T813XXU2BQD1
 vendor/lib64/hw/keystore.msm8952.so|d1e188f04709a68dd4d132e3afcd742a42f59993
 
-#Modem firmware
-etc/firmware/modem.b00
-etc/firmware/modem.b01
-etc/firmware/modem.b02
-etc/firmware/modem.b04
-etc/firmware/modem.b05
-etc/firmware/modem.b06
-etc/firmware/modem.b07
-etc/firmware/modem.b08
-etc/firmware/modem.b09
-etc/firmware/modem.b10
-etc/firmware/modem.b11
-etc/firmware/modem.b12
-etc/firmware/modem.b13
-etc/firmware/modem.b16
-etc/firmware/modem.b17
-etc/firmware/modem.b18
-etc/firmware/modem.b19
-etc/firmware/modem.b20
-etc/firmware/modem.b21
-etc/firmware/modem.mdt
-
 # Perf
 bin/msm_irqbalance:vendor/bin/msm_irqbalance
 vendor/bin/perfd
