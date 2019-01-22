@@ -151,9 +151,23 @@ static int enable_mixers(bool enable) {
     return 0;
 }
 
+static int select_profile(audio_mode_t mode) {
+    switch (mode) {
+        case AUDIO_MODE_IN_CALL:
+            return 1;
+        case AUDIO_MODE_IN_COMMUNICATION:
+            return 7;
+        case AUDIO_MODE_NORMAL:
+        default:
+            return 0;
+    }
+}
+
 static int amp_enable_output_devices(amplifier_device_t *device,
                                      uint32_t devices, bool enable) {
     c5_device_t *dev = (c5_device_t *)device;
+
+    int tfa_mode = select_profile(dev->current_mode);
 
     switch (devices) {
         case SND_DEVICE_OUT_SPEAKER:
@@ -167,6 +181,7 @@ static int amp_enable_output_devices(amplifier_device_t *device,
                     dev->initializing = true;
                     pthread_create(&dev->write_thread, NULL, write_dummy_data,
                                    dev);
+                    dev->tfa->tfaMode = tfa_mode;
                     dev->tfa->tfa_enable(dev->tfa, dev->enable);
                     pthread_mutex_lock(&dev->mutex);
                     dev->initializing = false;
