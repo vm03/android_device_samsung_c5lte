@@ -182,6 +182,9 @@ static int amp_enable_output_devices(amplifier_device_t *device,
                     pthread_create(&dev->write_thread, NULL, write_dummy_data,
                                    dev);
                     dev->tfa->tfaMode = tfa_mode;
+                    dev->tfa->tfa_setvolumestep(10,10);
+                    dev->tfa->tfa_enable(dev->tfa, dev->enable);
+                    dev->tfa->tfa_setvolumeattenuation(10,10);
                     dev->tfa->tfa_enable(dev->tfa, dev->enable);
                     pthread_mutex_lock(&dev->mutex);
                     dev->initializing = false;
