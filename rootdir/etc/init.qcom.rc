@@ -286,6 +286,8 @@ on boot
     chown system audio /dev/i2c-6
     chmod 0660 /dev/i2c-7
     chown system audio /dev/i2c-7
+    chmod 0664 /sys/class/power_supply/battery/batt_temp
+    chown system audio /sys/class/power_supply/battery/batt_temp
 
     # Permissions for Camera
     chown system system /sys/class/camera/rear/isp_core

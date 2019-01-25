@@ -1,6 +1,9 @@
 # Amplifier
 /dev/i2c-6                                                      u:object_r:audio_device:s0
 
+# Battery
+/sys/devices/battery.111/power_supply/battery/batt_temp         u:object_r:sysfs_batteryinfo:s0
+
 # EFS
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/efs           u:object_r:efs_block_device:s0
 /efs/bluetooth(/.*)?                                            u:object_r:bluetooth_efs_file:s0
