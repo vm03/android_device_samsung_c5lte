@@ -281,6 +281,11 @@ on boot
     chown system system /sys/class/sec/led/led_brightness
     chown system system /sys/class/sec/led/led_lowpower
 
+    # AFC
+    chown system radio /sys/class/sec/switch/afc_disable
+    #enable afc, TODO device settings
+    write /sys/class/sec/switch/afc_disable 0
+
     # Audio NXP
     chmod 0660 /dev/i2c-6
     chown system audio /dev/i2c-6
