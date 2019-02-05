@@ -1,5 +1,0 @@
-#!/vendor/bin/sh
-
-sleep 120
-stop ril-daemon
-start ril-daemon

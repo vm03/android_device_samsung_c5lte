@@ -284,11 +284,18 @@ on boot
     chown system system /sys/class/sec/led/led_brightness
     chown system system /sys/class/sec/led/led_lowpower
 
+    # AFC
+    chown system radio /sys/class/sec/switch/afc_disable
+    #enable afc, TODO device settings
+    write /sys/class/sec/switch/afc_disable 0
+
     # Audio NXP
     chmod 0660 /dev/i2c-6
     chown system audio /dev/i2c-6
     chmod 0660 /dev/i2c-7
     chown system audio /dev/i2c-7
+    chmod 0664 /sys/class/power_supply/battery/batt_temp
+    chown system audio /sys/class/power_supply/battery/batt_temp
 
     # Permissions for Camera
     chown system system /sys/class/camera/rear/isp_core
@@ -505,11 +512,6 @@ service loc_launcher /system/bin/loc_launcher
     group gps inet net_raw oem_2950 net_admin wifi
 
 service qcom-sh /vendor/bin/init.qcom.sh
-    class late_start
-    user root
-    oneshot
-
-service 99ril /vendor/bin/99ril
     class late_start
     user root
     oneshot
