@@ -1,0 +1,3 @@
+# Power
+BOARD_POWER_CUSTOM_BOARD_LIB := libpower_c5lte
+TARGET_POWERHAL_VARIANT := qcom
