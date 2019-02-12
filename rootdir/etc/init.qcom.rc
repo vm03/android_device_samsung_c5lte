@@ -475,7 +475,6 @@ service ipacm /vendor/bin/ipacm
     class main
     user radio
     group radio inet
-    disabled
 
 service qti /vendor/bin/qti
     class main
