@@ -478,11 +478,25 @@ vendor/lib/libOmxWmaDec.so
 # Keystore - from gts210vewifi T813XXU2BQD1
 vendor/lib64/hw/keystore.msm8952.so|d1e188f04709a68dd4d132e3afcd742a42f59993
 
-# Perf
-bin/msm_irqbalance:vendor/bin/msm_irqbalance
-vendor/bin/perfd
-vendor/lib64/libqti-perfd-client.so
-vendor/lib/libqti-perfd-client.so
+# Perf - from suzu OPR1.170623.026
+vendor/bin/msm_irqbalance|11a3dbb2cf1b35ec98fa195d03c822d4423f7118
+lib/vendor.qti.hardware.perf@1.0.so|03dc7188e6da945ae0ac0217fbc4f31dc0f0090a
+lib64/vendor.qti.hardware.perf@1.0.so|fb10041b1361ec069c644c532e0be638585f1492
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|8f26b2b56b0c64b8b1818a00c07f48c2812bb4b2
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
+vendor/etc/perf/perfboostsconfig.xml|4d719a70e639e6b8139b8c0085fb6d4508c25f1b
+vendor/lib/libfeedbackhandler.so|5d9848eb4397e91f53053b5bd8c08d1d447abf5d
+vendor/lib/libperfgluelayer.so|3ee84253b255557ce8706755f0e81c15495c2a5e
+vendor/lib/libqti-perfd-client.so|4872e66e3324f0f771d82f5cfea478a33d446b06
+vendor/lib/libqti-perfd.so|5931c6a1a28494c92cbddb64f7adebc6c7d25a92
+vendor/lib/libqti-util.so|1edd91fb9a9d7b56f2fb3e60bf5b644ce2a9bc76
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so|5af3ea7945a8379fb86cfed1711393be8f6136e7
+vendor/lib64/libfeedbackhandler.so|020f98e879322323371431a4c52d9fe1988a6293
+vendor/lib64/libperfgluelayer.so|302b6a9eb66a08d85807ec50186a5f07cc061f99
+vendor/lib64/libqti-perfd-client.so|d0834b094f7b663c33d5ac860d383472fd75d36f
+vendor/lib64/libqti-perfd.so|2f2c5b8292fd83c26831c4bed8c6479f7f4649b1
+vendor/lib64/libqti-util.so|7d85e9bb97ce1aef4b604c38a6076cf9d22d67a1
+vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|11f80bc9ce4eb7a5ce937423f24ce2830e74f13f
 
 # Peripheral manager
 bin/pm-proxy:vendor/bin/pm-proxy
