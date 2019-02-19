@@ -1,8 +1,6 @@
 allow system_server sensors_data_file:file rw_file_perms;
 allow system_server iio_device:chr_file r_file_perms;
 
-allow system_server sysfs_mdnie:file rw_file_perms;
-
 r_dir_file(system_server, app_efs_file)
 # To improve app launch times - we would like to force all tasks to
 # run on big cores for app launch (sched_boost) - instead of just
