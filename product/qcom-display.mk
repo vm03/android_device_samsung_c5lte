@@ -12,8 +12,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8952 \
     libgenlock \
     libtinyxml \
-    memtrack.msm8952 \
-    AdvancedDisplay
+    memtrack.msm8952
 
 # Permissions
 PRODUCT_COPY_FILES += \
