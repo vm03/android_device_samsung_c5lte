@@ -623,5 +623,6 @@ service msm_irqbal_lb /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance_l
 
 on property:vold.decrypt=trigger_restart_framework
     restart audio-hal-2-0
+    restart vendor.light-hal-2-0
     stop vendor.camera-provider-2-4
     start vendor.camera-provider-2-4
